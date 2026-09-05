@@ -189,8 +189,8 @@ export default function HighlightsPage() {
                 onClick={() => setSelectedTag(null)}
                 className={`border-sketch border-ink px-2.5 py-1 font-mono text-xs transition-all cursor-pointer ${
                   !selectedTag
-                    ? "bg-blue text-ink font-bold shadow-[2px_2px_0_0_#2A2A2A]"
-                    : "bg-cream text-ink/80 hover:bg-white hover:text-ink shadow-[1px_1px_0_0_#2A2A2A]"
+                    ? "bg-blue text-ink font-bold shadow-sketch-tag"
+                    : "bg-cream text-ink/80 hover:bg-surface hover:text-ink shadow-sketch-xs"
                 }`}
               >
                 All Moments ({highlightsData.length})
@@ -207,8 +207,8 @@ export default function HighlightsPage() {
                     onClick={() => handleTagClick(tag)}
                     className={`border-sketch border-ink px-2.5 py-1 font-mono text-xs transition-all cursor-pointer ${
                       isSelected
-                        ? "bg-blue text-ink font-bold shadow-[2px_2px_0_0_#2A2A2A]"
-                        : "bg-cream text-ink/80 hover:bg-white hover:text-ink shadow-[1px_1px_0_0_#2A2A2A]"
+                        ? "bg-blue text-ink font-bold shadow-sketch-tag"
+                        : "bg-cream text-ink/80 hover:bg-surface hover:text-ink shadow-sketch-xs"
                     }`}
                   >
                     #{tag} ({count})
@@ -258,7 +258,7 @@ export default function HighlightsPage() {
                   {/* Timeline Square Node Marker */}
                   <div
                     aria-hidden="true"
-                    className="border-ink bg-cream shadow-[1px_1px_0_0_#2A2A2A] absolute top-6 left-4 z-10 h-3.5 w-3.5 -translate-x-1/2 border-2 md:top-8 md:left-1/2 md:h-4 md:w-4"
+                    className="border-ink bg-cream shadow-sketch-xs absolute top-6 left-4 z-10 h-3.5 w-3.5 -translate-x-1/2 border-2 md:top-8 md:left-1/2 md:h-4 md:w-4"
                   />
 
                   {/* Desktop Alternating Row (md and above) */}
@@ -286,8 +286,8 @@ export default function HighlightsPage() {
                                 onClick={() => handleTagClick(tag)}
                                 className={`border-sketch border-ink px-2 py-0.5 font-mono text-[11px] select-none transition-all cursor-pointer ${
                                   selectedTag === tag
-                                    ? "bg-blue text-ink font-bold shadow-[2px_2px_0_0_#2A2A2A]"
-                                    : "bg-cream text-ink hover:bg-white shadow-[1px_1px_0_0_#2A2A2A]"
+                                    ? "bg-blue text-ink font-bold shadow-sketch-tag"
+                                    : "bg-cream text-ink hover:bg-surface shadow-sketch-xs"
                                 }`}
                               >
                                 #{tag}
@@ -301,9 +301,9 @@ export default function HighlightsPage() {
                           {/* Torn-paper tape */}
                           <div
                             aria-hidden="true"
-                            className="pointer-events-none absolute -top-3 left-1/2 z-10 h-5 w-20 -translate-x-1/2 rotate-[-2.5deg] border border-[#4A4A4A]/40 bg-[#E8E1D2]/85 shadow-sm"
+                            className="pointer-events-none absolute -top-3 left-1/2 z-10 h-5 w-20 -translate-x-1/2 rotate-[-2.5deg] border border-ink/40 bg-cream/90 shadow-sm"
                           />
-                          <div className="border-sketch border-ink relative aspect-[4/3] w-full overflow-hidden bg-[#2A2A2A]/5">
+                          <div className="border-sketch border-ink relative aspect-[4/3] w-full overflow-hidden bg-ink/5">
                             <Image
                               src={item.imageSrc}
                               alt={item.imageAlt}
@@ -326,9 +326,9 @@ export default function HighlightsPage() {
                           {/* Torn-paper tape */}
                           <div
                             aria-hidden="true"
-                            className="pointer-events-none absolute -top-3 left-1/2 z-10 h-5 w-20 -translate-x-1/2 rotate-[-2.5deg] border border-[#4A4A4A]/40 bg-[#E8E1D2]/85 shadow-sm"
+                            className="pointer-events-none absolute -top-3 left-1/2 z-10 h-5 w-20 -translate-x-1/2 rotate-[-2.5deg] border border-ink/40 bg-cream/90 shadow-sm"
                           />
-                          <div className="border-sketch border-ink relative aspect-[4/3] w-full overflow-hidden bg-[#2A2A2A]/5">
+                          <div className="border-sketch border-ink relative aspect-[4/3] w-full overflow-hidden bg-ink/5">
                             <Image
                               src={item.imageSrc}
                               alt={item.imageAlt}
@@ -361,8 +361,8 @@ export default function HighlightsPage() {
                                 onClick={() => handleTagClick(tag)}
                                 className={`border-sketch border-ink px-2 py-0.5 font-mono text-[11px] select-none transition-all cursor-pointer ${
                                   selectedTag === tag
-                                    ? "bg-blue text-ink font-bold shadow-[2px_2px_0_0_#2A2A2A]"
-                                    : "bg-cream text-ink hover:bg-white shadow-[1px_1px_0_0_#2A2A2A]"
+                                    ? "bg-blue text-ink font-bold shadow-sketch-tag"
+                                    : "bg-cream text-ink hover:bg-surface shadow-sketch-xs"
                                 }`}
                               >
                                 #{tag}
@@ -382,9 +382,9 @@ export default function HighlightsPage() {
                         {/* Torn-paper tape */}
                         <div
                           aria-hidden="true"
-                          className="pointer-events-none absolute -top-2.5 left-1/2 z-10 h-4 w-16 -translate-x-1/2 rotate-[-2deg] border border-[#4A4A4A]/40 bg-[#E8E1D2]/85 shadow-xs"
+                          className="pointer-events-none absolute -top-2.5 left-1/2 z-10 h-4 w-16 -translate-x-1/2 rotate-[-2deg] border border-ink/40 bg-cream/90 shadow-xs"
                         />
-                        <div className="border-sketch border-ink relative aspect-[4/3] w-full overflow-hidden bg-[#2A2A2A]/5">
+                        <div className="border-sketch border-ink relative aspect-[4/3] w-full overflow-hidden bg-ink/5">
                           <Image
                             src={item.imageSrc}
                             alt={item.imageAlt}
@@ -417,8 +417,8 @@ export default function HighlightsPage() {
                               onClick={() => handleTagClick(tag)}
                               className={`border-sketch border-ink px-2 py-0.5 font-mono text-[10px] select-none transition-all cursor-pointer ${
                                 selectedTag === tag
-                                  ? "bg-blue text-ink font-bold shadow-[2px_2px_0_0_#2A2A2A]"
-                                  : "bg-cream text-ink hover:bg-white shadow-[1px_1px_0_0_#2A2A2A]"
+                                  ? "bg-blue text-ink font-bold shadow-sketch-tag"
+                                  : "bg-cream text-ink hover:bg-surface shadow-sketch-xs"
                               }`}
                             >
                               #{tag}

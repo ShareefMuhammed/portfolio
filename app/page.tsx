@@ -58,7 +58,7 @@ export default function HomePage() {
     <div className="relative flex min-h-[72vh] flex-col items-start justify-center gap-8 pt-4 sm:pt-6 md:px-6 md:pt-12 lg:flex-row lg:items-center lg:gap-12 xl:gap-16">
       {/* Main Hero Card */}
       <div className="z-10 w-full max-w-3xl">
-        <div className="border-sketch border-ink shadow-[12px_12px_0_0_#2A2A2A] relative bg-white p-6 sm:p-8 md:p-10 md:shadow-[16px_16px_0_0_#2A2A2A]">
+        <div className="border-sketch border-ink shadow-sketch-xl relative bg-surface p-6 sm:p-8 md:p-10 md:shadow-[16px_16px_0_0_var(--color-ink)]">
           <div className="space-y-6">
             {/* Kicker Line: Star + Name on left, uppercase dynamic date on right */}
             <div className="border-ink/20 mb-4 flex items-baseline justify-between gap-4 border-b-2 pb-3.5">
@@ -90,7 +90,8 @@ export default function HomePage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 title="View Muhammed Shareef on LinkedIn"
-                className="border-sketch border-ink shadow-[4px_4px_0_0_#2A2A2A] hover:shadow-[6px_6px_0_0_#2A2A2A] relative shrink-0 rotate-2 cursor-pointer bg-white p-1.5 pb-1 transition-transform hover:rotate-0 lg:hidden"
+                aria-label="View Muhammed Shareef on LinkedIn"
+                className="border-sketch border-ink shadow-sketch-md hover:shadow-sketch relative shrink-0 rotate-2 cursor-pointer bg-surface p-1.5 pb-1 transition-transform hover:rotate-0 lg:hidden"
               >
                 <div className="border-sketch border-ink relative h-20 w-20 overflow-hidden sm:h-24 sm:w-24 md:h-28 md:w-28">
                   <Image
@@ -117,9 +118,10 @@ export default function HomePage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Muhammed Shareef on LinkedIn"
-                className="border-sketch border-ink shadow-[3px_3px_0_0_#2A2A2A] hover:shadow-[5px_5px_0_0_#2A2A2A] group inline-flex cursor-pointer items-center gap-2 bg-white px-3 py-1.5 transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 sm:px-3.5 sm:py-2"
+                aria-label="Muhammed Shareef on LinkedIn"
+                className="border-sketch border-ink shadow-sketch-sm hover:shadow-[5px_5px_0_0_var(--color-ink)] group inline-flex cursor-pointer items-center gap-2 bg-surface px-3 py-1.5 transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 sm:px-3.5 sm:py-2"
               >
-                <LinkedinIcon className="h-4 w-4 shrink-0 text-[#0A66C2]" />
+                <LinkedinIcon className="h-4 w-4 shrink-0 text-blue" />
                 <span className="text-ink group-hover:text-blue font-mono text-xs font-bold transition-colors sm:text-sm">
                   linkedin.com/in/muhammedshareef-p
                 </span>
@@ -165,7 +167,8 @@ export default function HomePage() {
         target="_blank"
         rel="noopener noreferrer"
         title="View Muhammed Shareef on LinkedIn"
-        className="border-sketch border-ink shadow-[8px_8px_0_0_#2A2A2A] hover:shadow-[10px_10px_0_0_#2A2A2A] group relative hidden shrink-0 rotate-2 cursor-pointer bg-white p-3 pb-2 transition-all duration-200 hover:-translate-y-1 hover:rotate-0 lg:block"
+        aria-label="View Muhammed Shareef on LinkedIn"
+        className="border-sketch border-ink shadow-sketch-lg hover:shadow-[10px_10px_0_0_var(--color-ink)] group relative hidden shrink-0 rotate-2 cursor-pointer bg-surface p-3 pb-2 transition-all duration-200 hover:-translate-y-1 hover:rotate-0 lg:block"
       >
         <div className="border-sketch border-ink relative h-48 w-48 overflow-hidden xl:h-56 xl:w-56">
           <Image

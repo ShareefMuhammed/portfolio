@@ -39,7 +39,7 @@ export function SectionHeading({
       {accentColor && (
         <span
           className={cn(
-            "border-ink inline-block h-3.5 w-3.5 shrink-0 border shadow-[1px_1px_0_0_#2A2A2A]",
+            "border-ink inline-block h-3.5 w-3.5 shrink-0 border shadow-sketch-xs",
             isNamedColor ? colorMap[accentColor] : ""
           )}
           style={!isNamedColor ? { backgroundColor: accentColor } : undefined}

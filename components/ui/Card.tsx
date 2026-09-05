@@ -23,7 +23,7 @@ export function Card({
       {hasTape && (
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -top-3 left-1/2 z-10 h-5 w-20 -translate-x-1/2 rotate-[-2.5deg] border border-[#4A4A4A]/40 bg-[#E8E1D2]/85 shadow-sm"
+          className="pointer-events-none absolute -top-3 left-1/2 z-10 h-5 w-20 -translate-x-1/2 rotate-[-2.5deg] border border-ink/40 bg-cream/90 shadow-sm"
         />
       )}
       {children}

@@ -56,7 +56,7 @@ export default function ContactPage() {
         <CornerBracketCard
           hasTape
           insetBrackets
-          className="p-6 md:p-10 shadow-[12px_12px_0_0_#2A2A2A] text-center"
+          className="p-6 md:p-10 shadow-sketch-xl text-center"
         >
           {/* Intro Paragraph */}
           <p className="text-ink font-mono text-base md:text-lg mb-8 md:mb-10 leading-relaxed max-w-2xl mx-auto">
@@ -72,7 +72,7 @@ export default function ContactPage() {
               href="mailto:shareef2003p@gmail.com"
               className="flex items-center gap-3 sm:gap-4 text-ink group hover:text-blue transition-colors"
             >
-              <div className="p-3 bg-surface border-2 border-ink shadow-[4px_4px_0_0_#2A2A2A] group-hover:-translate-y-0.5 group-hover:shadow-[6px_6px_0_0_#6495ED] transition-all">
+              <div className="p-3 bg-surface border-2 border-ink shadow-sketch-md group-hover:-translate-y-0.5 group-hover:shadow-[6px_6px_0_0_var(--color-blue)] transition-all">
                 <Mail className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" aria-hidden="true" />
               </div>
               <span className="text-base sm:text-lg font-bold break-all">
@@ -82,7 +82,7 @@ export default function ContactPage() {
 
             {/* Location Row */}
             <div className="flex items-center gap-3 sm:gap-4 text-ink">
-              <div className="p-3 bg-surface border-2 border-ink shadow-[4px_4px_0_0_#2A2A2A]">
+              <div className="p-3 bg-surface border-2 border-ink shadow-sketch-md">
                 <MapPin className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" aria-hidden="true" />
               </div>
               <span className="text-base sm:text-lg font-bold">
@@ -95,7 +95,7 @@ export default function ContactPage() {
           <div className="flex justify-center mb-8 md:mb-10">
             <a
               href="tel:+919567209599"
-              className="group relative inline-flex w-full sm:w-auto items-center justify-center gap-2 md:gap-3 px-5 py-3 md:px-6 md:py-3.5 bg-olive text-white border-2 border-ink shadow-[4px_4px_0_0_#2A2A2A] hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_#546B2F] active:translate-y-0 active:shadow-[2px_2px_0_0_#2A2A2A] transition-all font-pixel text-xs sm:text-sm md:text-base tracking-wide"
+              className="group relative inline-flex w-full sm:w-auto items-center justify-center gap-2 md:gap-3 px-5 py-3 md:px-6 md:py-3.5 bg-olive text-white border-2 border-ink shadow-sketch-md hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_var(--color-olive)] active:translate-y-0 active:shadow-sketch-tag transition-all font-pixel text-xs sm:text-sm md:text-base tracking-wide"
             >
               <Phone className="w-5 h-5 shrink-0" aria-hidden="true" />
               <span>+91 95672 09599</span>
@@ -105,7 +105,7 @@ export default function ContactPage() {
           {/* Dashed Divider */}
           <div className="border-t-2 border-dashed border-ink/20 pt-8">
             {/* Connect With Me Angled Label */}
-            <div className="inline-block bg-ink text-cream px-3 py-1 font-pixel text-xs mb-6 transform -rotate-2 select-none shadow-[2px_2px_0_0_#4A4A4A]">
+            <div className="inline-block bg-ink text-cream px-3 py-1 font-pixel text-xs mb-6 transform -rotate-2 select-none shadow-sketch-tag">
               CONNECT WITH ME
             </div>
 

@@ -55,7 +55,7 @@ export default function AboutPage() {
       {/* Top Section: About Me Bio & Widescreen Photo Card */}
       <section className="grid items-start gap-8 md:gap-12 lg:grid-cols-2">
         {/* Left Column: Bio Card */}
-        <div className="border-sketch border-ink shadow-[8px_8px_0_0_#2A2A2A] relative bg-white p-6 sm:p-8">
+        <div className="border-sketch border-ink shadow-sketch-lg relative bg-surface p-6 sm:p-8">
           <h1 className="font-pixel text-ink mb-6 text-3xl font-bold sm:text-4xl md:text-5xl">
             ABOUT ME
           </h1>
@@ -91,7 +91,7 @@ export default function AboutPage() {
         </div>
 
         {/* Right Column: Presentation Photo Card — Full Body & Face Alignment */}
-        <div className="border-sketch border-ink shadow-[12px_12px_0_0_#CD5C5C] group relative mx-auto aspect-[3/4] w-full max-w-md overflow-hidden bg-[#1A1A1A] lg:max-w-none">
+        <div className="border-sketch border-ink shadow-[12px_12px_0_0_var(--color-coral)] group relative mx-auto aspect-[3/4] w-full max-w-md overflow-hidden bg-ink lg:max-w-none">
           <Image
             src="/images/ieee1.jpg"
             alt="Muhammed Shareef presenting DrugGPT at IEEE student paper contest"
@@ -102,10 +102,10 @@ export default function AboutPage() {
             className="object-cover opacity-95 transition-opacity duration-300 group-hover:opacity-100"
           />
           {/* 4 White Corner Bracket Accents */}
-          <div className="border-ink/40 pointer-events-none absolute top-2 left-2 z-10 h-4 w-4 border bg-white shadow-sm" />
-          <div className="border-ink/40 pointer-events-none absolute top-2 right-2 z-10 h-4 w-4 border bg-white shadow-sm" />
-          <div className="border-ink/40 pointer-events-none absolute bottom-2 left-2 z-10 h-4 w-4 border bg-white shadow-sm" />
-          <div className="border-ink/40 pointer-events-none absolute right-2 bottom-2 z-10 h-4 w-4 border bg-white shadow-sm" />
+          <div className="border-ink/40 pointer-events-none absolute top-2 left-2 z-10 h-4 w-4 border bg-surface shadow-sm" />
+          <div className="border-ink/40 pointer-events-none absolute top-2 right-2 z-10 h-4 w-4 border bg-surface shadow-sm" />
+          <div className="border-ink/40 pointer-events-none absolute bottom-2 left-2 z-10 h-4 w-4 border bg-surface shadow-sm" />
+          <div className="border-ink/40 pointer-events-none absolute right-2 bottom-2 z-10 h-4 w-4 border bg-surface shadow-sm" />
         </div>
       </section>
 
@@ -113,7 +113,7 @@ export default function AboutPage() {
       <section>
         <h2 className="font-pixel text-ink mb-8 flex items-center gap-3 text-xl font-bold sm:gap-4 sm:text-2xl">
           <span
-            className="border-sketch border-ink shadow-[1px_1px_0_0_#2A2A2A] inline-block h-6 w-6 shrink-0 bg-[#556B2F] sm:h-8 sm:w-8"
+            className="border-sketch border-ink shadow-sketch-xs inline-block h-6 w-6 shrink-0 bg-olive sm:h-8 sm:w-8"
             aria-hidden="true"
           />
           <span>Professional Experience</span>
@@ -129,7 +129,7 @@ export default function AboutPage() {
               />
 
               {/* Timeline Card */}
-              <div className="border-sketch border-ink shadow-[4px_4px_0_0_#2A2A2A] bg-white p-5 transition-transform hover:translate-x-1 sm:p-6">
+              <div className="border-sketch border-ink shadow-sketch-md bg-surface p-5 transition-transform hover:translate-x-1 sm:p-6">
                 <div className="mb-2 flex flex-col justify-between md:flex-row md:items-center">
                   <h3 className="font-pixel text-ink text-base font-bold sm:text-lg md:text-xl">
                     {entry.role}
@@ -154,7 +154,7 @@ export default function AboutPage() {
       <section className="relative">
         <h2 className="font-pixel text-ink mb-8 flex items-center gap-3 text-xl font-bold sm:gap-4 sm:text-2xl">
           <span
-            className="border-sketch border-ink shadow-[1px_1px_0_0_#2A2A2A] bg-blue inline-block h-6 w-6 shrink-0 sm:h-8 sm:w-8"
+            className="border-sketch border-ink shadow-sketch-xs bg-blue inline-block h-6 w-6 shrink-0 sm:h-8 sm:w-8"
             aria-hidden="true"
           />
           <span>Technical Expertise</span>
@@ -164,7 +164,7 @@ export default function AboutPage() {
           {technicalSkills.map((skill) => (
             <span
               key={skill}
-              className="font-pixel text-ink border-sketch border-ink shadow-[2px_2px_0_0_#2A2A2A] hover:shadow-[4px_4px_0_0_#556B2F] cursor-pointer bg-white px-3.5 py-2 text-[10px] select-none transition-all hover:-translate-y-0.5 sm:px-4 sm:text-xs"
+              className="font-pixel text-ink border-sketch border-ink shadow-sketch-tag hover:shadow-[4px_4px_0_0_var(--color-olive)] cursor-pointer bg-surface px-3.5 py-2 text-[10px] select-none transition-all hover:-translate-y-0.5 sm:px-4 sm:text-xs"
             >
               {skill}
             </span>

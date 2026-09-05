@@ -74,7 +74,7 @@ export default function ProjectsPage() {
             <Card
               key={index}
               hasTape
-              className="group flex flex-col justify-between transition-all hover:-translate-y-1 hover:shadow-[12px_12px_0_0_#6495ED]"
+              className="group flex flex-col justify-between transition-all hover:-translate-y-1 hover:shadow-[12px_12px_0_0_var(--color-blue)]"
             >
               {/* Card Top: Title & Icon Links */}
               <div>
@@ -92,6 +92,7 @@ export default function ProjectsPage() {
                           target="_blank"
                           rel="noopener noreferrer"
                           title={`View ${project.title} source on GitHub`}
+                          aria-label={`View ${project.title} source on GitHub`}
                           className="text-ink hover:text-blue p-0.5 transition-colors"
                         >
                           <GithubIcon className="h-4 w-4 sm:h-[18px] sm:w-[18px]" />
@@ -103,6 +104,7 @@ export default function ProjectsPage() {
                           target="_blank"
                           rel="noopener noreferrer"
                           title={`View ${project.title} on npm`}
+                          aria-label={`View ${project.title} on npm`}
                           className="text-ink hover:text-blue p-0.5 transition-colors"
                         >
                           <ExternalLink className="h-4 w-4 sm:h-[18px] sm:w-[18px]" />

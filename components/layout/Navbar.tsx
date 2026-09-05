@@ -53,7 +53,7 @@ export function Navbar() {
 
         {/* The "Paper" - Navigation Strip */}
         <div className="relative mx-2 mt-4 md:mx-4 lg:mx-8">
-          <div className="border-ink relative rotate-[0.5deg] transform border-2 bg-white shadow-[0_8px_16px_-4px_rgba(0,0,0,0.1)]">
+          <div className="border-ink relative rotate-[0.5deg] transform border-2 bg-surface shadow-[0_8px_16px_-4px_rgba(0,0,0,0.1)]">
             {/* Paper Texture/Lines */}
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,transparent_19px,#000_20px)] bg-[size:100%_20px] opacity-10" />
 
@@ -127,7 +127,7 @@ export function Navbar() {
           </div>
 
           {/* Second sheet of paper behind for depth: -rotate-[1deg] translate-y-1 */}
-          <div className="border-ink absolute inset-0 -z-10 translate-y-1 -rotate-[1deg] transform border-2 bg-[#F6EEE3]" />
+          <div className="border-ink absolute inset-0 -z-10 translate-y-1 -rotate-[1deg] transform border-2 bg-cream" />
         </div>
       </div>
     </nav>

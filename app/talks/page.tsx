@@ -60,7 +60,7 @@ export default function TalksPage() {
           <Card
             key={index}
             hasTape
-            className="group flex flex-col justify-between p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[12px_12px_0_0_#6495ED]"
+            className="group flex flex-col justify-between p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[12px_12px_0_0_var(--color-blue)]"
           >
             {/* Top portion: Image + Date + Title */}
             <div>
@@ -103,7 +103,7 @@ export default function TalksPage() {
                 {talk.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-[10px] font-pixel text-ink bg-cream border border-ink px-2 py-1 shadow-[2px_2px_0_0_#2A2A2A]"
+                    className="text-[10px] font-pixel text-ink bg-cream border border-ink px-2 py-1 shadow-sketch-tag"
                   >
                     {tag}
                   </span>

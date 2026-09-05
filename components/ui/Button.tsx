@@ -16,7 +16,7 @@ export function Button({
 }: ButtonProps) {
   const variantStyles: Record<ButtonVariant, string> = {
     solid: "bg-ink text-cream hover:opacity-90",
-    outline: "bg-surface text-ink hover:bg-[#F9F6F0]",
+    outline: "bg-surface text-ink hover:bg-cream/40",
     cta: "bg-olive text-cream hover:brightness-110",
     highlight: "bg-yellow text-ink hover:brightness-105",
   };

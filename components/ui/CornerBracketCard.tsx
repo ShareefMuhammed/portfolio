@@ -32,7 +32,7 @@ export function CornerBracketCard({
       {hasTape && (
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -top-3.5 left-1/2 z-10 h-6 w-32 -translate-x-1/2 rotate-[-1deg] border border-[#4A4A4A]/40 bg-[#E8E1D2]/85 shadow-sm backdrop-blur-sm"
+          className="pointer-events-none absolute -top-3.5 left-1/2 z-10 h-6 w-32 -translate-x-1/2 rotate-[-1deg] border border-ink/40 bg-cream/90 shadow-sm backdrop-blur-sm"
         />
       )}
 

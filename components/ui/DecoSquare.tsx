@@ -28,7 +28,7 @@ export function DecoSquare({
       aria-hidden="true"
       style={{ width: `${size}px`, height: `${size}px`, ...style }}
       className={cn(
-        "border-ink pointer-events-none inline-block border shadow-[1px_1px_0_0_#2A2A2A] select-none",
+        "border-ink pointer-events-none inline-block border shadow-sketch-xs select-none",
         colorMap[color] || "bg-coral",
         className
       )}
