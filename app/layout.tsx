@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Press_Start_2P, JetBrains_Mono } from "next/font/google";
+import { SiteShell } from "@/components/layout";
 import "./globals.css";
 
 const pressStart2P = Press_Start_2P({
@@ -31,7 +32,7 @@ export default function RootLayout({
       className={`${pressStart2P.variable} ${jetbrainsMono.variable}`}
     >
       <body className="bg-cream text-ink min-h-screen font-mono antialiased">
-        {children}
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   );
