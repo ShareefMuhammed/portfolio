@@ -18,10 +18,10 @@ export function SnakeGame() {
   const [mode, setMode] = useState<"AUTO" | "MANUAL">("AUTO");
 
   // Snake grid coordinates: index 0 is head
-  const snakeRef = useRef<Point[]>([{ x: 8, y: 8 }]);
+  const snakeRef = useRef<Point[]>([{ x: 8, y: 10 }]);
   const directionRef = useRef<Direction>("RIGHT");
   const nextDirectionRef = useRef<Direction>("RIGHT");
-  const foodRef = useRef<Point>({ x: 16, y: 8 });
+  const foodRef = useRef<Point>({ x: 16, y: 12 });
   const gridRef = useRef<{ cols: number; rows: number }>({ cols: 0, rows: 0 });
   const obstaclesRef = useRef<boolean[][]>([]);
   const isDeadRef = useRef<boolean>(false);
@@ -107,10 +107,18 @@ export function SnakeGame() {
       Array(cols).fill(false)
     );
 
-    // Find cards and content boxes
+    // Find cards, nav bar, and content boxes
     const contentElements = document.querySelectorAll(
-      ".bg-surface, article, [data-obstacle='true']"
+      "nav, header, [role='navigation'], .bg-surface, article, [data-obstacle='true']"
     );
+
+    // Explicitly mark top header / nav zone (0 to 120px) as obstacle so food never spawns around nav
+    const navBarRows = Math.min(rows, 6);
+    for (let y = 0; y < navBarRows; y++) {
+      for (let x = 0; x < cols; x++) {
+        obstacleMap[y][x] = true;
+      }
+    }
 
     contentElements.forEach((el) => {
       const rect = el.getBoundingClientRect();
@@ -180,11 +188,14 @@ export function SnakeGame() {
     const { cols, rows } = gridRef.current;
     if (cols === 0 || rows === 0) return;
 
+    const minSafeY = Math.min(rows - 1, 6); // Strictly below nav bar
+    const availableRows = Math.max(1, rows - minSafeY);
+
     let attempts = 0;
     while (attempts < 100) {
       attempts++;
       const randX = Math.floor(getRandom() * cols);
-      const randY = Math.floor(getRandom() * rows);
+      const randY = minSafeY + Math.floor(getRandom() * availableRows);
       const candidate = { x: randX, y: randY };
 
       if (!isColliding(candidate)) {
@@ -196,7 +207,7 @@ export function SnakeGame() {
     // Fallback
     foodRef.current = {
       x: Math.floor(cols / 2),
-      y: Math.floor(rows / 2),
+      y: Math.max(minSafeY, Math.floor(rows / 2)),
     };
   }, [getRandom, isColliding]);
 

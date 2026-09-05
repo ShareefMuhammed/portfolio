@@ -4,7 +4,6 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui";
-import { FoodPoint } from "@/components/snake";
 
 function LinkedinIcon({ className }: { className?: string }) {
   return (
@@ -57,14 +56,6 @@ export default function HomePage() {
 
   return (
     <div className="relative flex min-h-[72vh] flex-col items-start justify-center gap-8 pt-4 sm:pt-6 md:px-6 md:pt-12 lg:flex-row lg:items-center lg:gap-12 xl:gap-16">
-      {/* Sequential FoodPoint 1 in top margin */}
-      <FoodPoint
-        id="home-food-1"
-        order={1}
-        color="coral"
-        className="absolute -top-2 left-6 z-20 md:-top-4 md:left-2"
-      />
-
       {/* Main Hero Card */}
       <div className="z-10 w-full max-w-3xl">
         <div className="border-sketch border-ink shadow-[12px_12px_0_0_#2A2A2A] relative bg-white p-6 sm:p-8 md:p-10 md:shadow-[16px_16px_0_0_#2A2A2A]">
@@ -182,14 +173,6 @@ export default function HomePage() {
           className="bg-cream border-ink/20 pointer-events-none absolute -top-3 left-1/2 h-6 w-20 -translate-x-1/2 -rotate-6 border opacity-90 shadow-sm"
         />
       </div>
-
-      {/* Sequential FoodPoint 2 in bottom margin */}
-      <FoodPoint
-        id="home-food-2"
-        order={2}
-        color="sage"
-        className="absolute -bottom-4 right-8 z-20 md:-bottom-6 md:right-4"
-      />
     </div>
   );
 }
