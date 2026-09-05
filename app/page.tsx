@@ -84,8 +84,14 @@ export default function HomePage() {
                 </h1>
               </div>
 
-              {/* Mobile/Tablet Polaroid Card */}
-              <div className="border-sketch border-ink shadow-[4px_4px_0_0_#2A2A2A] relative shrink-0 rotate-2 bg-white p-1.5 pb-1 lg:hidden">
+              {/* Mobile/Tablet Polaroid Card — Clickable to LinkedIn profile */}
+              <a
+                href="https://www.linkedin.com/in/muhammedshareef-p"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="View Muhammed Shareef on LinkedIn"
+                className="border-sketch border-ink shadow-[4px_4px_0_0_#2A2A2A] hover:shadow-[6px_6px_0_0_#2A2A2A] relative shrink-0 rotate-2 cursor-pointer bg-white p-1.5 pb-1 transition-transform hover:rotate-0 lg:hidden"
+              >
                 <div className="border-sketch border-ink relative h-20 w-20 overflow-hidden sm:h-24 sm:w-24 md:h-28 md:w-28">
                   <Image
                     src="/images/profile.jpg"
@@ -101,7 +107,7 @@ export default function HomePage() {
                   aria-hidden="true"
                   className="bg-cream border-ink/20 pointer-events-none absolute -top-2.5 left-1/2 h-4 w-12 -translate-x-1/2 -rotate-6 border opacity-90 shadow-sm"
                 />
-              </div>
+              </a>
             </div>
 
             {/* Badge Row — Exactly ONE LinkedIn badge */}
@@ -110,10 +116,11 @@ export default function HomePage() {
                 href="https://www.linkedin.com/in/muhammedshareef-p"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border-sketch border-ink shadow-[3px_3px_0_0_#2A2A2A] hover:shadow-[5px_5px_0_0_#2A2A2A] group inline-flex items-center gap-2 bg-white px-3 py-1.5 transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 sm:px-3.5 sm:py-2"
+                title="Muhammed Shareef on LinkedIn"
+                className="border-sketch border-ink shadow-[3px_3px_0_0_#2A2A2A] hover:shadow-[5px_5px_0_0_#2A2A2A] group inline-flex cursor-pointer items-center gap-2 bg-white px-3 py-1.5 transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 sm:px-3.5 sm:py-2"
               >
                 <LinkedinIcon className="h-4 w-4 shrink-0 text-[#0A66C2]" />
-                <span className="text-ink font-mono text-xs font-bold sm:text-sm">
+                <span className="text-ink group-hover:text-blue font-mono text-xs font-bold transition-colors sm:text-sm">
                   linkedin.com/in/muhammedshareef-p
                 </span>
               </a>
@@ -152,8 +159,14 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Desktop Polaroid Card */}
-      <div className="border-sketch border-ink shadow-[8px_8px_0_0_#2A2A2A] relative hidden shrink-0 rotate-2 bg-white p-3 pb-2 transition-transform duration-200 hover:rotate-0 lg:block">
+      {/* Desktop Polaroid Card — Clickable to LinkedIn profile */}
+      <a
+        href="https://www.linkedin.com/in/muhammedshareef-p"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="View Muhammed Shareef on LinkedIn"
+        className="border-sketch border-ink shadow-[8px_8px_0_0_#2A2A2A] hover:shadow-[10px_10px_0_0_#2A2A2A] group relative hidden shrink-0 rotate-2 cursor-pointer bg-white p-3 pb-2 transition-all duration-200 hover:-translate-y-1 hover:rotate-0 lg:block"
+      >
         <div className="border-sketch border-ink relative h-48 w-48 overflow-hidden xl:h-56 xl:w-56">
           <Image
             src="/images/profile.jpg"
@@ -161,10 +174,10 @@ export default function HomePage() {
             fill
             priority
             sizes="(max-width: 1280px) 192px, 224px"
-            className="object-cover object-center"
+            className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
           />
         </div>
-        <span className="text-ink/70 block pt-2 pb-1 text-center font-mono text-xs font-bold tracking-tight">
+        <span className="text-ink/70 group-hover:text-blue block pt-2 pb-1 text-center font-mono text-xs font-bold tracking-tight transition-colors">
           in/muhammedshareef-p
         </span>
         {/* Tape strip */}
@@ -172,7 +185,7 @@ export default function HomePage() {
           aria-hidden="true"
           className="bg-cream border-ink/20 pointer-events-none absolute -top-3 left-1/2 h-6 w-20 -translate-x-1/2 -rotate-6 border opacity-90 shadow-sm"
         />
-      </div>
+      </a>
     </div>
   );
 }
