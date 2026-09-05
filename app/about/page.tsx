@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import { FoodPoint } from "@/components/snake";
 
 interface TimelineEntry {
   role: string;
@@ -171,14 +170,6 @@ export default function AboutPage() {
             </span>
           ))}
         </div>
-
-        {/* 1 Sequential FoodPoint placed in page margin */}
-        <FoodPoint
-          id="about-food-1"
-          order={1}
-          color="sage"
-          className="absolute -bottom-6 right-4 z-20"
-        />
       </section>
     </div>
   );
