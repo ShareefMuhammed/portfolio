@@ -91,15 +91,16 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Right Column: Widescreen Photo Card */}
-        <div className="border-sketch border-ink shadow-[12px_12px_0_0_#CD5C5C] group relative h-[260px] overflow-hidden bg-[#1A1A1A] sm:h-[320px] md:h-[360px] lg:h-[380px]">
+        {/* Right Column: Presentation Photo Card — Full Body & Face Alignment */}
+        <div className="border-sketch border-ink shadow-[12px_12px_0_0_#CD5C5C] group relative mx-auto aspect-[3/4] w-full max-w-md overflow-hidden bg-[#1A1A1A] lg:max-w-none">
           <Image
             src="/images/ieee1.jpg"
             alt="Muhammed Shareef presenting DrugGPT at IEEE student paper contest"
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover object-center opacity-95 transition-opacity duration-300 group-hover:opacity-100"
+            style={{ objectPosition: "left top" }}
+            className="object-cover opacity-95 transition-opacity duration-300 group-hover:opacity-100"
           />
           {/* 4 White Corner Bracket Accents */}
           <div className="border-ink/40 pointer-events-none absolute top-2 left-2 z-10 h-4 w-4 border bg-white shadow-sm" />
