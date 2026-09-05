@@ -3,7 +3,6 @@
 import React, { useState, useMemo } from "react";
 import Image from "next/image";
 import { Filter, X } from "lucide-react";
-import { FoodPoint } from "@/components/snake";
 
 interface HighlightItem {
   id: string;
@@ -136,14 +135,6 @@ export default function HighlightsPage() {
 
   return (
     <div className="relative space-y-10 py-6 sm:py-8 md:space-y-12 md:py-12">
-      {/* 1 FoodPoint placed sensibly in the margin */}
-      <div
-        className="pointer-events-none absolute -top-4 right-2 sm:right-6 lg:-right-6"
-        aria-hidden="true"
-      >
-        <FoodPoint id="highlights-food-1" order={1} color="coral" size={14} />
-      </div>
-
       {/* Header Section */}
       <div className="mx-auto max-w-2xl space-y-4 text-center">
         <div className="flex justify-center">

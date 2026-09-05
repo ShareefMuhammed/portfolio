@@ -71,7 +71,6 @@ export default function DesignSystemPage() {
             { name: "Yellow", hex: "#FCEF84", bgClass: "bg-yellow" },
             { name: "Coral", hex: "#E0A49E", bgClass: "bg-coral" },
             { name: "Sage", hex: "#B0BD82", bgClass: "bg-sage" },
-            { name: "Snake", hex: "#A5AC88", bgClass: "bg-snake" },
           ].map((token) => (
             <div
               key={token.name}

@@ -17,7 +17,6 @@ const config: Config = {
         yellow: "#FCEF84", // highlight banner background
         coral: "#E0A49E", // decorative accent square, variant A
         sage: "#B0BD82", // decorative accent square, variant B
-        snake: "#A5AC88", // reserved for the ambient snake body (Step 3 will use this)
       },
       borderWidth: {
         sketch: "3px",
