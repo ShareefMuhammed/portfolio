@@ -33,195 +33,103 @@ export function Navbar() {
   };
 
   return (
-    <header className="w-full relative z-40 select-none">
-      {/* Top viewport solid line */}
-      <div className="w-full border-t border-ink" />
-
-      {/* Nav Container */}
-      <div className="w-full max-w-4xl mx-auto px-4 pt-3 pb-2">
-        <div className="relative w-full h-[54px] sm:h-[58px]">
-          {/* Layered Paper SVG Background */}
-          <svg
-            className="absolute inset-0 w-full h-full pointer-events-none overflow-visible"
-            viewBox="0 0 800 68"
-            preserveAspectRatio="none"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {/* Back Paper Layer (Parchment/under-paper)
-                - Left side: extends down to y=67 forming the classic sketch wedge
-                - Bottom edge slants smoothly up from y=67 on left to y=58 on right
-                - Right edge extends to x=798 from y=6 to y=58
-                - Top-right peeks out above front paper from x=520 to x=798, up to y=6 */}
-            <path
-              d="M 1 50 L 1 67 L 798 58 L 798 6 L 520 9 L 520 12 L 1 50 Z"
-              fill="#ECE5D6"
-              stroke="#2A2A2A"
-              strokeWidth="1.8"
-              strokeLinejoin="round"
-            />
-
-            {/* Front White Paper Layer
-                - Top line slants gently from y=9 at left to y=13 at right
-                - Right edge ends at x=790 (revealing the under-paper on the right)
-                - Bottom line slants from y=50 at left to y=56 at right */}
-            <path
-              d="M 1 9 L 790 13 L 790 56 L 1 50 Z"
-              fill="#FFFFFF"
-              stroke="#2A2A2A"
-              strokeWidth="1.8"
-              strokeLinejoin="round"
-            />
-
-            {/* Subtle Ruled Notebook Lines across the white paper */}
-            <line
-              x1="2"
-              y1="23"
-              x2="788"
-              y2="27"
-              stroke="#ECE7DE"
-              strokeWidth="1"
-            />
-            <line
-              x1="2"
-              y1="36"
-              x2="788"
-              y2="40"
-              stroke="#ECE7DE"
-              strokeWidth="1"
-            />
-            <line
-              x1="2"
-              y1="48"
-              x2="788"
-              y2="52"
-              stroke="#F0ECE4"
-              strokeWidth="1"
-            />
-          </svg>
-
-          {/* Center Clipboard/Briefcase Tab */}
+    <nav className="sticky top-0 left-0 w-full z-50 pointer-events-none pt-1">
+      <div className="max-w-5xl mx-auto relative pointer-events-auto">
+        {/* The "Clip" - Centered */}
+        <div className="navbar-clip group absolute left-1/2 -translate-x-1/2 -top-3 z-20 flex flex-col items-center pointer-events-auto cursor-pointer">
           <div
-            aria-hidden="true"
-            className="absolute left-1/2 -top-2.5 -translate-x-1/2 z-30 pointer-events-none drop-shadow-[0_4px_3px_rgba(42,42,42,0.4)]"
+            className="navbar-clip-body relative z-10 transition-all duration-400 ease-out group-hover:[transform:perspective(1000px)_rotateX(45deg)] group-hover:shadow-[0_30px_40px_-10px_rgba(0,0,0,0.4)]"
+            style={{ transformOrigin: "top" }}
           >
-            <svg
-              width="48"
-              height="38"
-              viewBox="0 0 48 38"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <defs>
-                <linearGradient
-                  id="clipBodyGradient"
-                  x1="0"
-                  y1="0"
-                  x2="0"
-                  y2="1"
-                >
-                  <stop offset="0%" stopColor="#9E9E9E" />
-                  <stop offset="100%" stopColor="#6C6C6C" />
-                </linearGradient>
-                <linearGradient
-                  id="clipHandleGradient"
-                  x1="0"
-                  y1="0"
-                  x2="0"
-                  y2="1"
-                >
-                  <stop offset="0%" stopColor="#8A8A8A" />
-                  <stop offset="100%" stopColor="#606060" />
-                </linearGradient>
-              </defs>
+            {/* Main clip shape */}
+            <div className="relative w-20 h-10 bg-gradient-to-b from-[#a8a8a8] to-[#808080] border-2 border-ink shadow-[4px_4px_0_0_rgba(0,0,0,0.2)] flex items-center justify-center">
+              {/* Top handle bump */}
+              <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-10 h-4 bg-gradient-to-b from-[#a8a8a8] to-[#808080] rounded-t-lg border-2 border-ink border-b-0" />
+              {/* Transparent hole */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full border-2 border-[#1a1a1a] shadow-[inset_0_1px_3px_rgba(0,0,0,0.6)]" />
+            </div>
+          </div>
+        </div>
 
-              {/* Top Curved Handle Loop */}
-              <path
-                d="M 12 9 C 12 2 36 2 36 9 Z"
-                fill="url(#clipHandleGradient)"
-                stroke="#2A2A2A"
-                strokeWidth="1.8"
-                strokeLinejoin="round"
-              />
+        {/* The "Paper" - Navigation Strip */}
+        <div className="mx-2 mt-4 md:mx-4 lg:mx-8 relative">
+          <div className="bg-white border-2 border-ink shadow-[0_8px_16px_-4px_rgba(0,0,0,0.1)] relative transform rotate-[0.5deg]">
+            {/* Paper Texture/Lines */}
+            <div className="absolute inset-0 opacity-10 pointer-events-none bg-[linear-gradient(0deg,transparent_19px,#000_20px)] bg-[size:100%_20px]" />
 
-              {/* Main Clip Clamp Body */}
-              <rect
-                x="1"
-                y="8"
-                width="46"
-                height="28"
-                rx="1"
-                fill="url(#clipBodyGradient)"
-                stroke="#2A2A2A"
-                strokeWidth="1.8"
-                strokeLinejoin="round"
-              />
+            <div className="px-3 py-4 md:px-4 lg:px-6 md:py-5 flex justify-between items-center min-h-[60px]">
+              {/* Navigation Links */}
+              <div className="flex w-full items-center justify-between">
+                {/* Left Side: Exactly 3 links (HOME, ABOUT, PROJECTS) */}
+                <ul className="flex-1 flex justify-end gap-2 md:gap-4 lg:gap-8 pr-2 md:pr-4 lg:pr-10">
+                  {leftLinks.map((link) => {
+                    const active = isLinkActive(link.href);
+                    return (
+                      <li key={link.href} className="relative z-10">
+                        <Link
+                          href={link.href}
+                          className={cn(
+                            "font-pixel text-[9px] md:text-[10px] lg:text-xs tracking-wide transition-all relative group whitespace-nowrap",
+                            active
+                              ? "text-blue font-bold"
+                              : "text-ink hover:text-blue"
+                          )}
+                        >
+                          {link.name}
+                          <span
+                            className={cn(
+                              "absolute -bottom-1 left-0 w-full h-2 bg-blue/20 -z-10 transition-all duration-300",
+                              active
+                                ? "opacity-100"
+                                : "opacity-0 group-hover:opacity-100"
+                            )}
+                          />
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
 
-              {/* Center Rivet Outer Ring & Hole */}
-              <circle
-                cx="24"
-                cy="22"
-                r="4.5"
-                fill="#424242"
-                stroke="#2A2A2A"
-                strokeWidth="1.5"
-              />
-              <circle cx="24" cy="22" r="2" fill="#202020" />
-            </svg>
+                {/* Spacer for Clip */}
+                <div className="w-14 md:w-16 lg:w-24 shrink-0" />
+
+                {/* Right Side: Exactly 3 links (HIGHLIGHTS, TALKS, CONTACT) */}
+                <ul className="flex-1 flex justify-start gap-2 md:gap-4 lg:gap-8 pl-2 md:pl-4 lg:pl-10">
+                  {rightLinks.map((link) => {
+                    const active = isLinkActive(link.href);
+                    return (
+                      <li key={link.href} className="relative z-10">
+                        <Link
+                          href={link.href}
+                          className={cn(
+                            "font-pixel text-[9px] md:text-[10px] lg:text-xs tracking-wide transition-all relative group whitespace-nowrap",
+                            active
+                              ? "text-blue font-bold"
+                              : "text-ink hover:text-blue"
+                          )}
+                        >
+                          {link.name}
+                          <span
+                            className={cn(
+                              "absolute -bottom-1 left-0 w-full h-2 bg-blue/20 -z-10 transition-all duration-300",
+                              active
+                                ? "opacity-100"
+                                : "opacity-0 group-hover:opacity-100"
+                            )}
+                          />
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </div>
           </div>
 
-          {/* Nav Links overlaid across the front paper */}
-          <nav
-            aria-label="Main Navigation"
-            className="relative z-20 w-full h-full flex items-center justify-between px-4 sm:px-7 md:px-9 pt-1.5"
-          >
-            {/* Left Nav Group: HOME, ABOUT, PROJECTS */}
-            <div className="flex items-center justify-between flex-1 pr-6 sm:pr-8 md:pr-10">
-              {leftLinks.map((link) => {
-                const active = isLinkActive(link.href);
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className={cn(
-                      "font-pixel text-[9px] sm:text-[10px] md:text-[11px] tracking-wider transition-colors duration-150 py-1",
-                      active
-                        ? "text-[#4D88FF] font-bold"
-                        : "text-ink hover:text-[#4D88FF]"
-                    )}
-                  >
-                    {link.name}
-                  </Link>
-                );
-              })}
-            </div>
-
-            {/* Empty Center Spacer for Clip */}
-            <div className="w-12 sm:w-16 shrink-0" aria-hidden="true" />
-
-            {/* Right Nav Group: HIGHLIGHTS, TALKS, CONTACT */}
-            <div className="flex items-center justify-between flex-1 pl-6 sm:pl-8 md:pl-10">
-              {rightLinks.map((link) => {
-                const active = isLinkActive(link.href);
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className={cn(
-                      "font-pixel text-[9px] sm:text-[10px] md:text-[11px] tracking-wider transition-colors duration-150 py-1",
-                      active
-                        ? "text-[#4D88FF] font-bold"
-                        : "text-ink hover:text-[#4D88FF]"
-                    )}
-                  >
-                    {link.name}
-                  </Link>
-                );
-              })}
-            </div>
-          </nav>
+          {/* Second sheet of paper behind for depth: -rotate-[1deg] translate-y-1 */}
+          <div className="absolute inset-0 bg-[#F6EEE3] border-2 border-ink -z-10 transform -rotate-[1deg] translate-y-1" />
         </div>
       </div>
-    </header>
+    </nav>
   );
 }
