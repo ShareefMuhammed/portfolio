@@ -1,0 +1,50 @@
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+@theme {
+  --color-cream: #f4ede1;
+  --color-surface: #ffffff;
+  --color-ink: #2a2a2a;
+  --color-blue: #6495ed;
+  --color-olive: #546b2f;
+  --color-yellow: #fcef84;
+  --color-coral: #e0a49e;
+  --color-sage: #b0bd82;
+  --color-snake: #a5ac88;
+
+  --border-width-sketch: 3px;
+
+  --shadow-sketch: 6px 6px 0 0 #2a2a2a;
+  --shadow-sketchSm: 3px 3px 0 0 #2a2a2a;
+  --shadow-sketch-sm: 3px 3px 0 0 #2a2a2a;
+
+  --font-pixel: var(--font-pixel), monospace;
+  --font-mono: var(--font-mono), monospace;
+}
+
+body {
+  background-color: #f4ede1;
+  color: #2a2a2a;
+  font-family: var(--font-mono), monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading-pixel {
+  font-family: var(--font-pixel), monospace;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dashed-divider {
+  border: none;
+  border-top: 1px dashed #2a2a2a;
+  width: 100%;
+  margin: 1rem 0;
+}
