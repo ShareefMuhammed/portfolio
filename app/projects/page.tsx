@@ -90,23 +90,23 @@ export default function ProjectsPage() {
             >
               {/* Card Top: Title & Icon Links */}
               <div>
-                <div className="mb-4 flex items-start justify-between gap-3">
-                  <h2 className="font-pixel text-ink text-lg font-bold leading-tight sm:text-xl">
+                <div className="mb-4 flex items-start justify-between gap-2 sm:gap-3">
+                  <h2 className="font-pixel text-ink text-xs sm:text-sm font-bold leading-relaxed break-words min-w-0">
                     {project.title}
                   </h2>
 
                   {/* Icon-link row: only render when URLs exist */}
                   {hasIcons && (
-                    <div className="flex shrink-0 items-center gap-3 pt-0.5">
+                    <div className="flex shrink-0 items-center gap-2 pt-0.5">
                       {project.githubUrl && (
                         <a
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
                           title={`View ${project.title} source on GitHub`}
-                          className="text-ink hover:text-blue transition-colors"
+                          className="text-ink hover:text-blue p-0.5 transition-colors"
                         >
-                          <GithubIcon className="h-5 w-5" />
+                          <GithubIcon className="h-4 w-4 sm:h-[18px] sm:w-[18px]" />
                         </a>
                       )}
                       {project.liveUrl && (
@@ -115,9 +115,9 @@ export default function ProjectsPage() {
                           target="_blank"
                           rel="noopener noreferrer"
                           title={`View ${project.title} on npm`}
-                          className="text-ink hover:text-blue transition-colors"
+                          className="text-ink hover:text-blue p-0.5 transition-colors"
                         >
-                          <ExternalLink className="h-5 w-5" />
+                          <ExternalLink className="h-4 w-4 sm:h-[18px] sm:w-[18px]" />
                         </a>
                       )}
                     </div>
@@ -125,7 +125,7 @@ export default function ProjectsPage() {
                 </div>
 
                 {/* Description Paragraph */}
-                <p className="text-ink/90 mb-6 font-mono text-sm leading-relaxed">
+                <p className="text-ink/90 mb-6 font-mono text-xs sm:text-sm leading-relaxed">
                   {project.description}
                 </p>
               </div>
