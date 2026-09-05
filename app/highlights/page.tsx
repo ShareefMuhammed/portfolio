@@ -137,13 +137,6 @@ export default function HighlightsPage() {
     <div className="relative space-y-10 py-6 sm:py-8 md:space-y-12 md:py-12">
       {/* Header Section */}
       <div className="mx-auto max-w-2xl space-y-4 text-center">
-        <div className="flex justify-center">
-          <span
-            className="border-ink bg-coral shadow-[1px_1px_0_0_#2A2A2A] h-3.5 w-3.5 border"
-            aria-hidden="true"
-          />
-        </div>
-
         <h1 className="font-pixel text-ink text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
           HIGHLIGHTS
         </h1>
