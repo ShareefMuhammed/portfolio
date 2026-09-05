@@ -1,14 +1,19 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 
-export interface CornerBracketCardProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface CornerBracketCardProps
+  extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   bracketSize?: number; // size in px, default 16
+  hasTape?: boolean;
+  insetBrackets?: boolean;
 }
 
 export function CornerBracketCard({
   children,
   bracketSize = 16,
+  hasTape = false,
+  insetBrackets = false,
   className,
   ...props
 }: CornerBracketCardProps) {
@@ -16,28 +21,52 @@ export function CornerBracketCard({
 
   return (
     <div
-      className={cn("bg-surface shadow-sketch relative p-6", className)}
+      className={cn(
+        "bg-surface shadow-sketch relative p-6",
+        insetBrackets && "border-2 border-ink",
+        className
+      )}
       {...props}
     >
+      {/* Optional Tape at top center */}
+      {hasTape && (
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-3.5 left-1/2 z-10 h-6 w-32 -translate-x-1/2 rotate-[-1deg] border border-[#4A4A4A]/40 bg-[#E8E1D2]/85 shadow-sm backdrop-blur-sm"
+        />
+      )}
+
       {/* Top Left Bracket */}
       <span
         style={sizeStyle}
-        className="border-t-sketch border-l-sketch border-ink pointer-events-none absolute -top-[1.5px] -left-[1.5px]"
+        className={cn(
+          "border-t-2 border-l-2 border-ink pointer-events-none absolute",
+          insetBrackets ? "top-2 left-2" : "-top-[1.5px] -left-[1.5px]"
+        )}
       />
       {/* Top Right Bracket */}
       <span
         style={sizeStyle}
-        className="border-t-sketch border-r-sketch border-ink pointer-events-none absolute -top-[1.5px] -right-[1.5px]"
+        className={cn(
+          "border-t-2 border-r-2 border-ink pointer-events-none absolute",
+          insetBrackets ? "top-2 right-2" : "-top-[1.5px] -right-[1.5px]"
+        )}
       />
       {/* Bottom Left Bracket */}
       <span
         style={sizeStyle}
-        className="border-b-sketch border-l-sketch border-ink pointer-events-none absolute -bottom-[1.5px] -left-[1.5px]"
+        className={cn(
+          "border-b-2 border-l-2 border-ink pointer-events-none absolute",
+          insetBrackets ? "bottom-2 left-2" : "-bottom-[1.5px] -left-[1.5px]"
+        )}
       />
       {/* Bottom Right Bracket */}
       <span
         style={sizeStyle}
-        className="border-b-sketch border-r-sketch border-ink pointer-events-none absolute -right-[1.5px] -bottom-[1.5px]"
+        className={cn(
+          "border-b-2 border-r-2 border-ink pointer-events-none absolute",
+          insetBrackets ? "bottom-2 right-2" : "-right-[1.5px] -bottom-[1.5px]"
+        )}
       />
 
       {children}
