@@ -2,8 +2,7 @@
 
 import React from "react";
 import { ExternalLink } from "lucide-react";
-import { DecoSquare, Card, Tag } from "@/components/ui";
-import { FoodPoint } from "@/components/snake";
+import { Card, Tag } from "@/components/ui";
 
 function GithubIcon({ className }: { className?: string }) {
   return (
@@ -60,21 +59,10 @@ export default function ProjectsPage() {
   return (
     <div className="relative space-y-12 py-6 sm:py-8 md:space-y-16 md:py-12">
       {/* Header Section */}
-      <div className="space-y-4">
-        <div className="flex items-center gap-3">
-          <DecoSquare color="blue" size={14} />
-          <DecoSquare color="coral" size={14} />
-          <DecoSquare color="olive" size={14} />
-        </div>
-
+      <div>
         <h1 className="font-pixel text-ink text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
           FEATURED PROJECTS
         </h1>
-
-        <p className="text-ink/80 max-w-2xl font-mono text-sm leading-relaxed sm:text-base">
-          A showcase of open-source CLI tools, multimodal AI systems, and
-          interactive analytics dashboards built by Muhammed Shareef.
-        </p>
       </div>
 
       {/* Projects Grid: Responsive 3-Column Grid */}
@@ -141,11 +129,6 @@ export default function ProjectsPage() {
             </Card>
           );
         })}
-      </div>
-
-      {/* 1 FoodPoint placed sensibly in the page margin */}
-      <div className="pointer-events-none absolute top-4 right-2 sm:right-6 lg:-right-8" aria-hidden="true">
-        <FoodPoint id="projects-food-1" order={1} color="coral" size={14} />
       </div>
     </div>
   );
