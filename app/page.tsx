@@ -30,10 +30,10 @@ export default function HomePage() {
         <div className="border-sketch border-ink shadow-sketch-xl relative bg-surface p-6 sm:p-8 md:p-10 md:shadow-[16px_16px_0_0_var(--color-ink)]">
           <div className="space-y-6">
             {/* Kicker Line: Star + Name on left, uppercase dynamic date on right */}
-            <div className="border-ink/20 mb-4 flex items-baseline justify-between gap-4 border-b-2 pb-3.5">
-              <h2 className="font-pixel text-ink flex items-center gap-2 truncate text-[11px] uppercase tracking-wider md:text-sm">
-                <span className="text-yellow text-sm">★</span>
-                <span>MUHAMMED SHAREEF</span>
+            <div className="border-ink/20 mb-4 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1.5 border-b-2 pb-3.5">
+              <h2 className="font-pixel text-ink flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-[11px] uppercase tracking-wider md:text-sm">
+                <span className="text-yellow text-xs sm:text-sm">★</span>
+                <span>SHAREEF</span>
               </h2>
               <CurrentDate />
             </div>
