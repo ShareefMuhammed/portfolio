@@ -36,6 +36,9 @@ export function Navbar() {
     return pathname.startsWith(href);
   };
 
+  const currentPageItem = allLinks.find((link) => isLinkActive(link.href));
+  const currentPageName = currentPageItem?.name ?? "HOME";
+
   // Close menu when route changes
   useEffect(() => {
     setIsOpen(false);
@@ -167,12 +170,12 @@ export function Navbar() {
 
               {/* Mobile Navigation Header (< md) */}
               <div className="flex md:hidden w-full items-center justify-between">
-                {/* Left: Brand / Home Link */}
+                {/* Left: Current Page / Home Link */}
                 <Link
                   href="/"
                   className="font-pixel text-ink hover:text-blue text-[10px] sm:text-xs font-bold tracking-wider transition-colors"
                 >
-                  SHAREEF
+                  {currentPageName}
                 </Link>
 
                 {/* Center Spacer for Clip */}
