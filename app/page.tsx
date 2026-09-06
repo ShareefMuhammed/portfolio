@@ -1,9 +1,6 @@
-"use client";
-
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui";
+import { Button, CurrentDate } from "@/components/ui";
 
 function LinkedinIcon({ className }: { className?: string }) {
   return (
@@ -25,35 +22,7 @@ function LinkedinIcon({ className }: { className?: string }) {
   );
 }
 
-function getFormattedDate(): string {
-  const d = new Date();
-  const day = String(d.getDate()).padStart(2, "0");
-  const months = [
-    "JAN",
-    "FEB",
-    "MAR",
-    "APR",
-    "MAY",
-    "JUN",
-    "JUL",
-    "AUG",
-    "SEPT",
-    "OCT",
-    "NOV",
-    "DEC",
-  ];
-  const month = months[d.getMonth()];
-  const year = d.getFullYear();
-  return `${day} ${month} ${year}`;
-}
-
 export default function HomePage() {
-  const formattedDate = React.useSyncExternalStore(
-    () => () => {},
-    getFormattedDate,
-    () => getFormattedDate()
-  );
-
   return (
     <div className="relative flex min-h-[72vh] flex-col items-start justify-center gap-8 pt-4 sm:pt-6 md:px-6 md:pt-12 lg:flex-row lg:items-center lg:gap-12 xl:gap-16">
       {/* Main Hero Card */}
@@ -66,12 +35,7 @@ export default function HomePage() {
                 <span className="text-yellow text-sm">★</span>
                 <span>MUHAMMED SHAREEF</span>
               </h2>
-              <time
-                suppressHydrationWarning
-                className="font-pixel text-ink/60 shrink-0 text-[9px] tracking-wider uppercase md:text-[11px]"
-              >
-                {formattedDate}
-              </time>
+              <CurrentDate />
             </div>
 
             {/* Heading + Mobile Polaroid Preview */}
