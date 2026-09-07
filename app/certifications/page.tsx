@@ -47,6 +47,36 @@ export const certificatesData: CertificateItem[] = [
     image: "/images/certifications/05-ai-fluency.jpg",
     alt: "Certificate of Completion for AI Fluency: Framework & Foundations from Anthropic for Muhammed Shareef P",
   },
+  {
+    id: "06",
+    title: "IEEE Student Paper Contest 2026 - Certificate of Participation",
+    image: "/images/certifications/06-ieee-paper-contest.jpg",
+    alt: "Certificate of Participation for presenting DrugGPT paper in IEEE Student Paper Contest 2026 at CCET Alappuzha for Muhammed Shareef P",
+  },
+  {
+    id: "07",
+    title: "AI Bootcamp - Build Your First Predictive Model with Python",
+    image: "/images/certifications/07-ai-bootcamp-predictive-model.jpg",
+    alt: "Certificate of Completion from Upcode Software Labs for AI Bootcamp: Build Your First Predictive Model with Python for Muhammed Shareef P",
+  },
+  {
+    id: "08",
+    title: "WOW Summit 2025 - Certificate of Participation",
+    image: "/images/certifications/08-wow-summit-2025.jpg",
+    alt: "Certificate of Participation for WOW Summit 2025 student-led tech summit held at Jain University Kochi for Muhammed Shareef P",
+  },
+  {
+    id: "09",
+    title: "ScaleUp Conclave 2025 - Data Analytics Using Python",
+    image: "/images/certifications/09-scaleup-data-analytics.jpg",
+    alt: "Certificate of Participation from ScaleUp Conclave 2025 for Master Class in Data Analytics Using Python for Muhammed Shareef P",
+  },
+  {
+    id: "10",
+    title: "Power BI for Beginners - Certificate of Completion",
+    image: "/images/certifications/10-power-bi-beginners.jpg",
+    alt: "Certificate of Completion from Simplilearn SkillUp for Power BI for Beginners for Muhammed Shareef P",
+  },
 ];
 
 export default function CertificationsPage() {
