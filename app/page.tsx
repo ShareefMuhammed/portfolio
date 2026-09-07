@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Download } from "lucide-react";
 import { Button, CurrentDate } from "@/components/ui";
 
 function LinkedinIcon({ className }: { className?: string }) {
@@ -120,6 +121,16 @@ export default function HomePage() {
                   Contact Me
                 </Button>
               </Link>
+              <a
+                href="https://drive.google.com/uc?export=download&id=1bNF4TQHYQQ2EkK3M0PXe4BsQDDgu46rj"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="outline" className="px-6 py-3 text-xs sm:text-sm">
+                  <Download className="h-4 w-4" aria-hidden="true" />
+                  Resume
+                </Button>
+              </a>
             </div>
           </div>
         </div>
