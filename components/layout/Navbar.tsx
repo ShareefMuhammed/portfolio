@@ -87,8 +87,8 @@ export function Navbar() {
   return (
     <nav className="pointer-events-none sticky top-0 left-0 z-50 w-full pt-1">
       <div className="pointer-events-auto relative mx-auto max-w-5xl">
-        {/* The "Clip" - Centered (Scaled slightly on mobile so it doesn't dominate) */}
-        <div className="navbar-clip group pointer-events-auto absolute -top-3 left-1/2 z-20 flex -translate-x-1/2 scale-90 sm:scale-100 cursor-pointer flex-col items-center transition-transform">
+        {/* The "Clip" - Visually balanced between left (4 links) and right (3 links) on desktop, centered on mobile */}
+        <div className="navbar-clip group pointer-events-auto absolute -top-3 left-1/2 lg:left-[55%] z-20 flex -translate-x-1/2 scale-90 sm:scale-100 cursor-pointer flex-col items-center transition-transform">
           <div
             className="navbar-clip-body relative z-10 transition-all duration-400 ease-out group-hover:[transform:perspective(1000px)_rotateX(45deg)] group-hover:shadow-[0_30px_40px_-10px_rgba(0,0,0,0.4)]"
             style={{ transformOrigin: "top" }}
@@ -109,11 +109,11 @@ export function Navbar() {
             {/* Paper Texture/Lines */}
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,transparent_19px,#000_20px)] bg-[size:100%_20px] opacity-10" />
 
-            <div className="flex min-h-[52px] sm:min-h-[60px] items-center justify-between px-3 py-2.5 sm:px-4 sm:py-4 md:px-4 md:py-5 lg:px-6">
-              {/* Desktop Navigation Links (>= md) */}
-              <div className="hidden md:flex w-full items-center justify-between">
+            <div className="flex min-h-[52px] sm:min-h-[60px] items-center justify-between px-3 py-2.5 sm:px-4 sm:py-4 lg:px-0">
+              {/* Desktop Navigation Links (>= lg) */}
+              <div className="hidden lg:flex w-full items-center justify-between pl-6 pr-12 xl:pl-8 xl:pr-14">
                 {/* Left Side: 4 links (HOME, ABOUT, PROJECTS, CERTIFICATIONS) */}
-                <ul className="flex flex-1 items-center justify-end gap-1.5 md:gap-2 lg:gap-4 xl:gap-6 pr-2 md:pr-3 lg:pr-4">
+                <ul className="flex items-center gap-4 xl:gap-6">
                   {leftLinks.map((link) => {
                     const active = isLinkActive(link.href);
                     return (
@@ -121,7 +121,7 @@ export function Navbar() {
                         <Link
                           href={link.href}
                           className={cn(
-                            "font-pixel group relative text-[9px] tracking-tight whitespace-nowrap transition-all md:text-[9px] lg:text-[11px] xl:text-xs lg:tracking-wide",
+                            "font-pixel group relative text-[9px] tracking-tight whitespace-nowrap transition-all lg:text-[10px] xl:text-[11px] xl:tracking-wide",
                             active
                               ? "text-blue font-bold"
                               : "text-ink hover:text-blue"
@@ -142,11 +142,11 @@ export function Navbar() {
                   })}
                 </ul>
 
-                {/* Spacer for Clip: Wide enough so clip never touches adjacent links */}
-                <div className="w-20 shrink-0 md:w-24 lg:w-28 xl:w-32" />
+                {/* Spacer for Clip: maintains equal clearance around the clip */}
+                <div className="w-20 xl:w-24 shrink-0" />
 
                 {/* Right Side: 3 links (HIGHLIGHTS, TALKS, CONTACT) */}
-                <ul className="flex flex-1 items-center justify-start gap-2 md:gap-3 lg:gap-5 xl:gap-7 pl-2 md:pr-3 lg:pl-4">
+                <ul className="flex items-center gap-4 xl:gap-6">
                   {rightLinks.map((link) => {
                     const active = isLinkActive(link.href);
                     return (
@@ -154,7 +154,7 @@ export function Navbar() {
                         <Link
                           href={link.href}
                           className={cn(
-                            "font-pixel group relative text-[9px] tracking-tight whitespace-nowrap transition-all md:text-[9px] lg:text-[11px] xl:text-xs lg:tracking-wide",
+                            "font-pixel group relative text-[9px] tracking-tight whitespace-nowrap transition-all lg:text-[10px] xl:text-[11px] xl:tracking-wide",
                             active
                               ? "text-blue font-bold"
                               : "text-ink hover:text-blue"
@@ -176,8 +176,8 @@ export function Navbar() {
                 </ul>
               </div>
 
-              {/* Mobile Navigation Header (< md) */}
-              <div className="flex md:hidden w-full items-center justify-between">
+              {/* Mobile Navigation Header (< lg) */}
+              <div className="flex lg:hidden w-full items-center justify-between">
                 {/* Left: Current Page / Home Link */}
                 <Link
                   href="/"
@@ -211,11 +211,11 @@ export function Navbar() {
           {/* Second sheet of paper behind for depth: -rotate-[1deg] translate-y-1 */}
           <div className="border-ink absolute inset-0 -z-10 translate-y-1 -rotate-[1deg] transform border-2 bg-cream" />
 
-          {/* Mobile Dropdown Panel (< md) */}
+          {/* Mobile Dropdown Panel (< lg) */}
           {isOpen && (
             <div
               ref={menuRef}
-              className="pointer-events-auto relative mt-3 md:hidden"
+              className="pointer-events-auto relative mt-3 lg:hidden"
             >
               <div className="border-sketch border-ink bg-surface shadow-sketch-xl relative p-5 transition-all">
                 {/* Torn-paper tape at top of dropdown */}
