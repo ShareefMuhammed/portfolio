@@ -15,13 +15,14 @@ const allLinks: NavLinkItem[] = [
   { name: "HOME", href: "/" },
   { name: "ABOUT", href: "/about" },
   { name: "PROJECTS", href: "/projects" },
+  { name: "CERTIFICATIONS", href: "/certifications" },
   { name: "HIGHLIGHTS", href: "/highlights" },
   { name: "TALKS", href: "/talks" },
   { name: "CONTACT", href: "/contact" },
 ];
 
-const leftLinks = allLinks.slice(0, 3);
-const rightLinks = allLinks.slice(3);
+const leftLinks = allLinks.slice(0, 4);
+const rightLinks = allLinks.slice(4);
 
 export function Navbar() {
   const pathname = usePathname();
@@ -36,8 +37,15 @@ export function Navbar() {
     return pathname.startsWith(href);
   };
 
-  const currentPageItem = allLinks.find((link) => isLinkActive(link.href));
-  const currentPageName = currentPageItem?.name ?? "HOME";
+  const getPageName = () => {
+    if (pathname === "/certifications" || pathname.startsWith("/certifications")) {
+      return "CERTIFICATIONS";
+    }
+    const item = allLinks.find((link) => isLinkActive(link.href));
+    return item?.name ?? "HOME";
+  };
+
+  const currentPageName = getPageName();
 
   // Close menu when route changes
   useEffect(() => {
@@ -104,8 +112,8 @@ export function Navbar() {
             <div className="flex min-h-[52px] sm:min-h-[60px] items-center justify-between px-3 py-2.5 sm:px-4 sm:py-4 md:px-4 md:py-5 lg:px-6">
               {/* Desktop Navigation Links (>= md) */}
               <div className="hidden md:flex w-full items-center justify-between">
-                {/* Left Side: Exactly 3 links (HOME, ABOUT, PROJECTS) */}
-                <ul className="flex flex-1 justify-end gap-2 pr-2 md:gap-4 md:pr-4 lg:gap-8 lg:pr-10">
+                {/* Left Side: 4 links (HOME, ABOUT, PROJECTS, CERTIFICATIONS) */}
+                <ul className="flex flex-1 items-center justify-end gap-1.5 md:gap-2 lg:gap-4 xl:gap-6 pr-2 md:pr-3 lg:pr-4">
                   {leftLinks.map((link) => {
                     const active = isLinkActive(link.href);
                     return (
@@ -113,7 +121,7 @@ export function Navbar() {
                         <Link
                           href={link.href}
                           className={cn(
-                            "font-pixel group relative text-[9px] tracking-wide whitespace-nowrap transition-all md:text-[10px] lg:text-xs",
+                            "font-pixel group relative text-[9px] tracking-tight whitespace-nowrap transition-all md:text-[9px] lg:text-[11px] xl:text-xs lg:tracking-wide",
                             active
                               ? "text-blue font-bold"
                               : "text-ink hover:text-blue"
@@ -134,11 +142,11 @@ export function Navbar() {
                   })}
                 </ul>
 
-                {/* Spacer for Clip */}
-                <div className="w-14 shrink-0 md:w-16 lg:w-24" />
+                {/* Spacer for Clip: Wide enough so clip never touches adjacent links */}
+                <div className="w-20 shrink-0 md:w-24 lg:w-28 xl:w-32" />
 
-                {/* Right Side: Exactly 3 links (HIGHLIGHTS, TALKS, CONTACT) */}
-                <ul className="flex flex-1 justify-start gap-2 pl-2 md:gap-4 md:pl-4 lg:gap-8 lg:pl-10">
+                {/* Right Side: 3 links (HIGHLIGHTS, TALKS, CONTACT) */}
+                <ul className="flex flex-1 items-center justify-start gap-2 md:gap-3 lg:gap-5 xl:gap-7 pl-2 md:pr-3 lg:pl-4">
                   {rightLinks.map((link) => {
                     const active = isLinkActive(link.href);
                     return (
@@ -146,7 +154,7 @@ export function Navbar() {
                         <Link
                           href={link.href}
                           className={cn(
-                            "font-pixel group relative text-[9px] tracking-wide whitespace-nowrap transition-all md:text-[10px] lg:text-xs",
+                            "font-pixel group relative text-[9px] tracking-tight whitespace-nowrap transition-all md:text-[9px] lg:text-[11px] xl:text-xs lg:tracking-wide",
                             active
                               ? "text-blue font-bold"
                               : "text-ink hover:text-blue"
