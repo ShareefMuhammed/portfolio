@@ -77,6 +77,36 @@ export const certificatesData: CertificateItem[] = [
     image: "/images/certifications/10-power-bi-beginners.jpg",
     alt: "Certificate of Completion from Simplilearn SkillUp for Power BI for Beginners for Muhammed Shareef P",
   },
+  {
+    id: "11",
+    title: "Advanced Google Analytics - Certificate of Completion",
+    image: "/images/certifications/11-advanced-google-analytics.jpg",
+    alt: "Certificate of Completion from Google Analytics Academy for Advanced Google Analytics for Muhammed Shareef P",
+  },
+  {
+    id: "12",
+    title: "Career Essentials in Generative AI - Microsoft & LinkedIn",
+    image: "/images/certifications/12-career-essentials-generative-ai.jpg",
+    alt: "Learning Path Certificate of Completion from Microsoft and LinkedIn for Career Essentials in Generative AI for Muhammed Shareef P",
+  },
+  {
+    id: "13",
+    title: "App Development in React Native - IEEE Workshop",
+    image: "/images/certifications/13-app-dev-react-native-ieee.jpg",
+    alt: "Certificate of Participation for App Development in React Native workshop by Talrop at XTRINIA 5.0, IEEE Student Branch MEA Engineering College for Muhammed Shareef P",
+  },
+  {
+    id: "14",
+    title: "What Is Generative AI? - LinkedIn Learning",
+    image: "/images/certifications/14-what-is-generative-ai.jpg",
+    alt: "Course Certificate of Completion from LinkedIn Learning for What Is Generative AI? for Muhammed Shareef P",
+  },
+  {
+    id: "15",
+    title: "Python - Certificate of Achievement",
+    image: "/images/certifications/15-python-achievement.jpg",
+    alt: "Certificate of Achievement for successfully completing Python course from Mind Luster for Muhammed Shareef P",
+  },
 ];
 
 export default function CertificationsPage() {
