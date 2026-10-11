@@ -18,6 +18,12 @@ export interface CertificateItem {
 
 export const certificatesData: CertificateItem[] = [
   {
+    id: "ibm-python-data-science",
+    title: "Python for Data Science, AI & Development - IBM",
+    image: "/images/certifications/ibm-python-data-science.jpg",
+    alt: "IBM Python for Data Science, AI & Development course certificate issued through Coursera for Muhammed Shareef P",
+  },
+  {
     id: "01",
     title: "B.Tech Degree - Provisional Certificate",
     image: "/images/certifications/01-btech-degree.jpg",
