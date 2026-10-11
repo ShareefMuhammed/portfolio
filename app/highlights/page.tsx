@@ -29,7 +29,7 @@ const highlightsData: HighlightItem[] = [
       </>
     ),
     tags: ["smectechnologies", "hackingchallenge", "cybersecurity", "2026"],
-    imageSrc: "/images/highlights/hacking-challenge-smec.jpg",
+    imageSrc: "/images/highlights/smec-hacking-challenge.jpg",
     imageAlt:
       "Hacking Challenge poster from SMEC Technologies, September 15, 2026",
     isPortrait: true,
@@ -322,7 +322,7 @@ export default function HighlightsPage() {
                         /* Photo Card on Left */
                         <div
                           className={`group border-sketch border-ink bg-surface shadow-sketch hover:shadow-sketchHover relative overflow-visible p-3 transition-all hover:-translate-y-1 ${
-                            item.isPortrait ? "max-w-[350px] ml-auto" : ""
+                            item.isPortrait ? "max-w-[380px] ml-auto" : ""
                           }`}
                         >
                           {/* Torn-paper tape */}
@@ -333,7 +333,7 @@ export default function HighlightsPage() {
                           <div
                             className={`border-sketch border-ink relative w-full overflow-hidden bg-ink/5 ${
                               item.isPortrait
-                                ? "aspect-[480/676] max-h-[490px]"
+                                ? "aspect-[507/523] max-h-[450px]"
                                 : "aspect-[4/3]"
                             }`}
                           >
@@ -345,7 +345,7 @@ export default function HighlightsPage() {
                               priority
                               sizes={
                                 item.isPortrait
-                                  ? "(min-width: 768px) 350px, 90vw"
+                                  ? "(min-width: 768px) 380px, 90vw"
                                   : "(min-width: 768px) 45vw, 90vw"
                               }
                               className={`${
@@ -365,7 +365,7 @@ export default function HighlightsPage() {
                         /* Photo Card on Right */
                         <div
                           className={`group border-sketch border-ink bg-surface shadow-sketch hover:shadow-sketchHover relative overflow-visible p-3 transition-all hover:-translate-y-1 ${
-                            item.isPortrait ? "max-w-[350px] mr-auto" : ""
+                            item.isPortrait ? "max-w-[380px] mr-auto" : ""
                           }`}
                         >
                           {/* Torn-paper tape */}
@@ -376,7 +376,7 @@ export default function HighlightsPage() {
                           <div
                             className={`border-sketch border-ink relative w-full overflow-hidden bg-ink/5 ${
                               item.isPortrait
-                                ? "aspect-[480/676] max-h-[490px]"
+                                ? "aspect-[507/523] max-h-[450px]"
                                 : "aspect-[4/3]"
                             }`}
                           >
@@ -388,7 +388,7 @@ export default function HighlightsPage() {
                               priority
                               sizes={
                                 item.isPortrait
-                                  ? "(min-width: 768px) 350px, 90vw"
+                                  ? "(min-width: 768px) 380px, 90vw"
                                   : "(min-width: 768px) 45vw, 90vw"
                               }
                               className={`${
@@ -449,7 +449,7 @@ export default function HighlightsPage() {
                         />
                         <div
                           className={`border-sketch border-ink relative w-full overflow-hidden bg-ink/5 ${
-                            item.isPortrait ? "aspect-[480/676]" : "aspect-[4/3]"
+                            item.isPortrait ? "aspect-[507/523]" : "aspect-[4/3]"
                           }`}
                         >
                           <Image
