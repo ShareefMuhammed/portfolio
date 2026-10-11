@@ -13,9 +13,30 @@ interface HighlightItem {
   imageSrc: string;
   imageAlt: string;
   isPortrait?: boolean;
+  aspectClass?: string;
 }
 
 const highlightsData: HighlightItem[] = [
+  {
+    id: "github-dev-days-2026",
+    title: "GitHub Dev Days 2026 at Kochi",
+    date: "September 25, 2026",
+    description: (
+      <>
+        Attended GitHub Dev Days 2026 at TinkerHub, Kochi, an event full of
+        developers coming together to build, experiment, learn, and connect. It
+        reinforced my interest in how modern developer tools and AI-assisted
+        development can change the way we build products. Leaving with new
+        ideas, fresh motivation, and a stronger curiosity to keep building.
+      </>
+    ),
+    tags: ["githubdevdays", "tinkerhub", "kochi", "2026"],
+    imageSrc: "/images/highlights/github-dev-days-2026.jpg",
+    imageAlt:
+      "Speaker presenting to an audience at GitHub Dev Days 2026 at TinkerHub, Kochi",
+    isPortrait: true,
+    aspectClass: "aspect-[436/350] max-h-[420px]",
+  },
   {
     id: "smec-hacking-challenge",
     title: "Hacking Challenge at SMEC Technologies",
@@ -33,6 +54,7 @@ const highlightsData: HighlightItem[] = [
     imageAlt:
       "Hacking Challenge poster from SMEC Technologies, September 15, 2026",
     isPortrait: true,
+    aspectClass: "aspect-[507/523] max-h-[450px]",
   },
   {
     id: "techcon26",
@@ -322,7 +344,7 @@ export default function HighlightsPage() {
                         /* Photo Card on Left */
                         <div
                           className={`group border-sketch border-ink bg-surface shadow-sketch hover:shadow-sketchHover relative overflow-visible p-3 transition-all hover:-translate-y-1 ${
-                            item.isPortrait ? "max-w-[380px] ml-auto" : ""
+                            item.isPortrait ? "max-w-[420px] ml-auto" : ""
                           }`}
                         >
                           {/* Torn-paper tape */}
@@ -332,9 +354,10 @@ export default function HighlightsPage() {
                           />
                           <div
                             className={`border-sketch border-ink relative w-full overflow-hidden bg-ink/5 ${
-                              item.isPortrait
+                              item.aspectClass ||
+                              (item.isPortrait
                                 ? "aspect-[507/523] max-h-[450px]"
-                                : "aspect-[4/3]"
+                                : "aspect-[4/3]")
                             }`}
                           >
                             <Image
@@ -345,7 +368,7 @@ export default function HighlightsPage() {
                               priority
                               sizes={
                                 item.isPortrait
-                                  ? "(min-width: 768px) 380px, 90vw"
+                                  ? "(min-width: 768px) 420px, 90vw"
                                   : "(min-width: 768px) 45vw, 90vw"
                               }
                               className={`${
@@ -365,7 +388,7 @@ export default function HighlightsPage() {
                         /* Photo Card on Right */
                         <div
                           className={`group border-sketch border-ink bg-surface shadow-sketch hover:shadow-sketchHover relative overflow-visible p-3 transition-all hover:-translate-y-1 ${
-                            item.isPortrait ? "max-w-[380px] mr-auto" : ""
+                            item.isPortrait ? "max-w-[420px] mr-auto" : ""
                           }`}
                         >
                           {/* Torn-paper tape */}
@@ -375,9 +398,10 @@ export default function HighlightsPage() {
                           />
                           <div
                             className={`border-sketch border-ink relative w-full overflow-hidden bg-ink/5 ${
-                              item.isPortrait
+                              item.aspectClass ||
+                              (item.isPortrait
                                 ? "aspect-[507/523] max-h-[450px]"
-                                : "aspect-[4/3]"
+                                : "aspect-[4/3]")
                             }`}
                           >
                             <Image
@@ -388,7 +412,7 @@ export default function HighlightsPage() {
                               priority
                               sizes={
                                 item.isPortrait
-                                  ? "(min-width: 768px) 380px, 90vw"
+                                  ? "(min-width: 768px) 420px, 90vw"
                                   : "(min-width: 768px) 45vw, 90vw"
                               }
                               className={`${
@@ -449,7 +473,11 @@ export default function HighlightsPage() {
                         />
                         <div
                           className={`border-sketch border-ink relative w-full overflow-hidden bg-ink/5 ${
-                            item.isPortrait ? "aspect-[507/523]" : "aspect-[4/3]"
+                            item.aspectClass
+                              ? item.aspectClass.split(" ")[0]
+                              : item.isPortrait
+                              ? "aspect-[507/523]"
+                              : "aspect-[4/3]"
                           }`}
                         >
                           <Image
