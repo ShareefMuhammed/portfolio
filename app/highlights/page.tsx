@@ -12,9 +12,28 @@ interface HighlightItem {
   tags: string[];
   imageSrc: string;
   imageAlt: string;
+  isPortrait?: boolean;
 }
 
 const highlightsData: HighlightItem[] = [
+  {
+    id: "smec-hacking-challenge",
+    title: "Hacking Challenge at SMEC Technologies",
+    date: "September 15, 2026",
+    description: (
+      <>
+        Participated in the Hacking Challenge hosted by SMEC Technologies, a
+        hands-on competition where participants raced to crack the challenge
+        first. It was a fast-paced experience that tested problem-solving,
+        curiosity, and thinking under pressure.
+      </>
+    ),
+    tags: ["smectechnologies", "hackingchallenge", "cybersecurity", "2026"],
+    imageSrc: "/images/highlights/hacking-challenge-smec.jpg",
+    imageAlt:
+      "Hacking Challenge poster from SMEC Technologies, September 15, 2026",
+    isPortrait: true,
+  },
   {
     id: "techcon26",
     title: "Techcon 26 at Kochi",
@@ -262,7 +281,11 @@ export default function HighlightsPage() {
                   />
 
                   {/* Desktop Alternating Row (md and above) */}
-                  <div className="hidden md:flex md:items-center md:gap-12">
+                  <div
+                    className={`hidden md:flex md:gap-12 ${
+                      item.isPortrait ? "md:items-start pt-2" : "md:items-center"
+                    }`}
+                  >
                     {/* Left Column */}
                     <div className="w-1/2 pr-6">
                       {isEven ? (
@@ -297,21 +320,39 @@ export default function HighlightsPage() {
                         </div>
                       ) : (
                         /* Photo Card on Left */
-                        <div className="group border-sketch border-ink bg-surface shadow-sketch hover:shadow-sketchHover relative overflow-visible p-3 transition-all hover:-translate-y-1">
+                        <div
+                          className={`group border-sketch border-ink bg-surface shadow-sketch hover:shadow-sketchHover relative overflow-visible p-3 transition-all hover:-translate-y-1 ${
+                            item.isPortrait ? "max-w-[350px] ml-auto" : ""
+                          }`}
+                        >
                           {/* Torn-paper tape */}
                           <div
                             aria-hidden="true"
                             className="pointer-events-none absolute -top-3 left-1/2 z-10 h-5 w-20 -translate-x-1/2 rotate-[-2.5deg] border border-ink/40 bg-cream/90 shadow-sm"
                           />
-                          <div className="border-sketch border-ink relative aspect-[4/3] w-full overflow-hidden bg-ink/5">
+                          <div
+                            className={`border-sketch border-ink relative w-full overflow-hidden bg-ink/5 ${
+                              item.isPortrait
+                                ? "aspect-[480/676] max-h-[490px]"
+                                : "aspect-[4/3]"
+                            }`}
+                          >
                             <Image
                               src={item.imageSrc}
                               alt={item.imageAlt}
                               fill
                               unoptimized
                               priority
-                              sizes="(min-width: 768px) 45vw, 90vw"
-                              className="object-cover object-center transition-transform duration-300 group-hover:scale-[1.02]"
+                              sizes={
+                                item.isPortrait
+                                  ? "(min-width: 768px) 350px, 90vw"
+                                  : "(min-width: 768px) 45vw, 90vw"
+                              }
+                              className={`${
+                                item.isPortrait
+                                  ? "object-contain"
+                                  : "object-cover"
+                              } object-center transition-transform duration-300 group-hover:scale-[1.02]`}
                             />
                           </div>
                         </div>
@@ -322,21 +363,39 @@ export default function HighlightsPage() {
                     <div className="w-1/2 pl-6">
                       {isEven ? (
                         /* Photo Card on Right */
-                        <div className="group border-sketch border-ink bg-surface shadow-sketch hover:shadow-sketchHover relative overflow-visible p-3 transition-all hover:-translate-y-1">
+                        <div
+                          className={`group border-sketch border-ink bg-surface shadow-sketch hover:shadow-sketchHover relative overflow-visible p-3 transition-all hover:-translate-y-1 ${
+                            item.isPortrait ? "max-w-[350px] mr-auto" : ""
+                          }`}
+                        >
                           {/* Torn-paper tape */}
                           <div
                             aria-hidden="true"
                             className="pointer-events-none absolute -top-3 left-1/2 z-10 h-5 w-20 -translate-x-1/2 rotate-[-2.5deg] border border-ink/40 bg-cream/90 shadow-sm"
                           />
-                          <div className="border-sketch border-ink relative aspect-[4/3] w-full overflow-hidden bg-ink/5">
+                          <div
+                            className={`border-sketch border-ink relative w-full overflow-hidden bg-ink/5 ${
+                              item.isPortrait
+                                ? "aspect-[480/676] max-h-[490px]"
+                                : "aspect-[4/3]"
+                            }`}
+                          >
                             <Image
                               src={item.imageSrc}
                               alt={item.imageAlt}
                               fill
                               unoptimized
                               priority
-                              sizes="(min-width: 768px) 45vw, 90vw"
-                              className="object-cover object-center transition-transform duration-300 group-hover:scale-[1.02]"
+                              sizes={
+                                item.isPortrait
+                                  ? "(min-width: 768px) 350px, 90vw"
+                                  : "(min-width: 768px) 45vw, 90vw"
+                              }
+                              className={`${
+                                item.isPortrait
+                                  ? "object-contain"
+                                  : "object-cover"
+                              } object-center transition-transform duration-300 group-hover:scale-[1.02]`}
                             />
                           </div>
                         </div>
@@ -378,21 +437,35 @@ export default function HighlightsPage() {
                   <div className="block pl-10 md:hidden">
                     <div className="space-y-4">
                       {/* Photo Card */}
-                      <div className="group border-sketch border-ink bg-surface shadow-sketch relative overflow-visible p-2.5">
+                      <div
+                        className={`group border-sketch border-ink bg-surface shadow-sketch relative overflow-visible p-2.5 ${
+                          item.isPortrait ? "max-w-xs sm:max-w-sm" : ""
+                        }`}
+                      >
                         {/* Torn-paper tape */}
                         <div
                           aria-hidden="true"
                           className="pointer-events-none absolute -top-2.5 left-1/2 z-10 h-4 w-16 -translate-x-1/2 rotate-[-2deg] border border-ink/40 bg-cream/90 shadow-xs"
                         />
-                        <div className="border-sketch border-ink relative aspect-[4/3] w-full overflow-hidden bg-ink/5">
+                        <div
+                          className={`border-sketch border-ink relative w-full overflow-hidden bg-ink/5 ${
+                            item.isPortrait ? "aspect-[480/676]" : "aspect-[4/3]"
+                          }`}
+                        >
                           <Image
                             src={item.imageSrc}
                             alt={item.imageAlt}
                             fill
                             unoptimized
                             priority
-                            sizes="90vw"
-                            className="object-cover object-center"
+                            sizes={
+                              item.isPortrait
+                                ? "(max-width: 640px) 100vw, 384px"
+                                : "90vw"
+                            }
+                            className={`${
+                              item.isPortrait ? "object-contain" : "object-cover"
+                            } object-center`}
                           />
                         </div>
                       </div>
