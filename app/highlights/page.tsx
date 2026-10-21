@@ -18,6 +18,25 @@ interface HighlightItem {
 
 const highlightsData: HighlightItem[] = [
   {
+    id: "the-narrator-kochi",
+    title: "The Narrator at Kochi",
+    date: "October 15, 2026",
+    description: (
+      <>
+        Participated in The Narrator at SMEC Technologies, Kaloor, a
+        mystery-solving coding challenge built as an investigation in five acts.
+        Clues hide in code, truths hide in people. It was a hands-on mix of
+        tracing, analyzing, and solving that tested how we think under pressure.
+      </>
+    ),
+    tags: ["thenarrator", "smectechnologies", "codingchallenge", "2026"],
+    imageSrc: "/images/highlights/the-narrator-kochi.jpg",
+    imageAlt:
+      "SMEC Technologies 'The Narrator' event card for October 15, 2026, held in front of a laptop",
+    isPortrait: true,
+    aspectClass: "aspect-[3/4] max-h-[520px]",
+  },
+  {
     id: "github-dev-days-2026",
     title: "GitHub Dev Days 2026 at Kochi",
     date: "September 25, 2026",
