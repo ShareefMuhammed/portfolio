@@ -34,7 +34,7 @@ const highlightsData: HighlightItem[] = [
     imageAlt:
       "SMEC Technologies 'The Narrator' event card for October 15, 2026, held in front of a laptop",
     isPortrait: true,
-    aspectClass: "aspect-[3/4] max-h-[520px]",
+    aspectClass: "aspect-[904/1024] max-h-[520px]",
   },
   {
     id: "github-dev-days-2026",
